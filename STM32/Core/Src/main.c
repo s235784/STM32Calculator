@@ -264,7 +264,7 @@ int isSign(char ch) {
 
 int addSign(char *sign) {
 	int itemLen = strlen(item);
-	if (item[itemLen - 1] >= '0' && item[itemLen - 1] <= '9') {
+	if ((item[itemLen - 1] >= '0' && item[itemLen - 1] <= '9')) {
 		strcat(item, "*");
 		strcat(item, sign);
 		return 0;
@@ -274,6 +274,11 @@ int addSign(char *sign) {
 	
 	strcat(item, sign);
 	return 0;
+}
+
+int checkBracket() {
+	int len = strlen(item);
+	return item[len - 1] == ')';
 }
 
 int checkNum() {
@@ -318,22 +323,22 @@ void addItem(char ch) {
 			if (checkNum()) strcat(item, ")");
 			else flag = 2;
 	} else if (ch == '.') {
-			if (checkNum()) strcat(item, ".");
+			if (checkNum() || checkBracket()) strcat(item, ".");
 			else flag = 2;
 	} else if (ch == '+') {
-			if (checkNum()) strcat(item, "+");
+			if (checkNum() || checkBracket()) strcat(item, "+");
 			else flag = 2;
 	} else if (ch == '-') {
-			if (checkNum()) strcat(item, "-");
+			if (checkNum() || checkBracket()) strcat(item, "-");
 			else flag = 2;
 	} else if (ch == '*') {
-			if (checkNum()) strcat(item, "*");
+			if (checkNum() || checkBracket()) strcat(item, "*");
 			else flag = 2;
 	} else if (ch == '/') {
-			if (checkNum()) strcat(item, "/");
+			if (checkNum() || checkBracket()) strcat(item, "/");
 			else flag = 2;
 	} else if (ch == '^') {
-			if (checkNum()) strcat(item, "^");
+			if (checkNum() || checkBracket()) strcat(item, "^");
 			else flag = 2;
 	} else if (item[0] == '\0') {
 			item[0] = ch;
