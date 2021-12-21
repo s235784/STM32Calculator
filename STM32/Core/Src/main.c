@@ -228,7 +228,7 @@ void backItem() {
 			item[len - 2] = '\0';
 		} else {
 			char* p;
-			for (p = item; *p; p++){}
+			for (p = item; *p; p++);
 			*(--p) = '\0';
 		}
 	} else {
@@ -296,9 +296,9 @@ void addItem(char ch) {
 		return;
 	}
 	
-	if (item[len - 1] == '0' && !isSign(ch)) {
+	if (item[len - 1] == '0' && !isSign(ch) && len == 1) {
 		char* p;
-		for (p = item; *p; p++){}
+		for (p = item; *p; p++);
 		*(--p) = '\0';
 	}
 	
