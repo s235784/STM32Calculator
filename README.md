@@ -21,6 +21,12 @@
  ## 效果图
  
  <img src="https://raw.githubusercontent.com/s235784/STM32Calculator/main/document/ui.png" alt="ui" width="400">
+ 
+ ## 参考
+ 
+ 算法部分参考自 [一个用C实现的科学计算器 - Designer_DRK](https://blog.csdn.net/Designer_DRK/article/details/52749016)
+ 
+ UI部分参考自 [简易计算器 - USART HMI 资料中心](http://wiki.tjc1688.com/doku.php?id=7.%E5%B7%A5%E7%A8%8B%E6%A0%B7%E4%BE%8B:3.%E7%BD%91%E5%8F%8B%E6%8F%90%E4%BE%9B%E5%BA%94%E7%94%A8%E6%A0%B7%E4%BE%8B)
 
 
 ## License
